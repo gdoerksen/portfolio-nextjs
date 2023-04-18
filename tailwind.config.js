@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const { fontFamily } = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: [
@@ -19,14 +20,11 @@ module.exports = {
         mont: ['var(--font-mont)', ...fontFamily.sans],
       },
       colors: {
-        dark: "#1E1E1E",
-        light: "#F5F5F5",
-        primary: "#FFC107",
-        primaryDark: "#FFA000",
-        // light: 'var(--color-light)',
-        // dark: 'var(--color-dark)',
-        // primary: 'var(--color-primary)',
-        // primaryDark: 'var(--color-primary-dark)',
+        dark: colors.slate[900],
+        light: colors.slate[100],
+        primary: colors.blue[500],
+        secondary: colors.blue[700],
+        accent: colors.blue[300],
     },
   },
 },
