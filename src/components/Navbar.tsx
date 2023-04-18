@@ -4,9 +4,8 @@ import Logo from "./Logo";
 import { LinkProps } from "next/link";
 
 import { IconContext } from "react-icons";
-import { RxLinkedinLogo, RxGithubLogo } from 'react-icons/rx'
+import { FaLinkedin, FaGithub, FaMeetup } from 'react-icons/fa'
 
-import { title } from "process";
 import { useRouter } from "next/router";
 
 type QuickLinkProps = {
@@ -38,39 +37,40 @@ export default function Navbar() {
 
   let iconStyle = {
     size: "2em",
-    className: "rounded-full bg-light hover:bg-sky-300 ease duration-300 "
+    className: "bg-light opacity-25 hover:opacity-100 ease duration-300 "
   };
 
   return (
 
 
     <header
-      className="w-full px-32 py-8 font-medium flex items-center justify-between"
+      className="w-full px-16 py-8 font-medium flex items-center justify-between"
     >
       <nav>
-        <QuickLink href="/" title="Home" className="mx-4" />
+        <QuickLink href="/" title="Home" className="ml-4" />
         <QuickLink href="/about" title="About" className="mx-4" />
-        <QuickLink href="/projects" title="Projects" className="mx-4" />
+        <QuickLink href="/projects" title="Projects" className="mr-4" />
       </nav>
 
       <Logo />
 
-      <nav>
+      <nav className="flex space-x-4">
         <Link href="https://www.linkedin.com/in/grahamdoerksen/" target={"_blank"}>
           <IconContext.Provider value={iconStyle}>
-            <RxLinkedinLogo/>
+            <FaLinkedin/>
           </IconContext.Provider>
         </Link>
         <Link href="https://github.com/gdoerksen" target={"_blank"}>
           <IconContext.Provider value={iconStyle}>
-            <RxGithubLogo />
+            <FaGithub />
+          </IconContext.Provider>
+        </Link>
+        <Link href="https://www.meetup.com/pydata-calgary/" target={"_blank"}>
+          <IconContext.Provider value={iconStyle}>
+            <FaMeetup />
           </IconContext.Provider>
         </Link>
       </nav>
-
-      {/* <div className="absolute left-[50%] top-2 translate-x-[-50%]">
-        <Logo />
-      </div> */}
 
     </header>
   );
