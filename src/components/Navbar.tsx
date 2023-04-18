@@ -3,11 +3,11 @@ import Logo from "./Logo";
 
 import { LinkProps } from "next/link";
 
+import { IconContext } from "react-icons";
 import { RxLinkedinLogo, RxGithubLogo } from 'react-icons/rx'
+
 import { title } from "process";
 import { useRouter } from "next/router";
-
-// type QuickLink = (href: string, title: string, className: string) => LinkProps
 
 type QuickLinkProps = {
   href: string,
@@ -15,7 +15,7 @@ type QuickLinkProps = {
   className?: string
 };
 
-function QuickLink(obj: QuickLinkProps) {
+function QuickLink (obj: QuickLinkProps) {
   const router = useRouter();
 
   return (
@@ -36,6 +36,11 @@ function QuickLink(obj: QuickLinkProps) {
 
 export default function Navbar() {
 
+  let iconStyle = {
+    size: "2em",
+    className: "rounded-full bg-light hover:bg-sky-300 ease duration-300 "
+  };
+
   return (
 
 
@@ -48,14 +53,24 @@ export default function Navbar() {
         <QuickLink href="/projects" title="Projects" className="mx-4" />
       </nav>
 
+      <Logo />
+
       <nav>
-        <Link href="https://www.linkedin.com/in/grahamdoerksen/" target={"_blank"}> <RxLinkedinLogo />  </Link>
-        <Link href="https://github.com/gdoerksen" target={"_blank"}> <RxGithubLogo /> </Link>
+        <Link href="https://www.linkedin.com/in/grahamdoerksen/" target={"_blank"}>
+          <IconContext.Provider value={iconStyle}>
+            <RxLinkedinLogo/>
+          </IconContext.Provider>
+        </Link>
+        <Link href="https://github.com/gdoerksen" target={"_blank"}>
+          <IconContext.Provider value={iconStyle}>
+            <RxGithubLogo />
+          </IconContext.Provider>
+        </Link>
       </nav>
 
-      <div className="absolute left-[50%] top-2 translate-x-[-50%]">
+      {/* <div className="absolute left-[50%] top-2 translate-x-[-50%]">
         <Logo />
-      </div>
+      </div> */}
 
     </header>
   );
