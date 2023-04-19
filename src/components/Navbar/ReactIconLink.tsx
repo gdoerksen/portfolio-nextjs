@@ -12,7 +12,7 @@ type ReactIconLinkProps = {
 export function ReactIconLink(obj: ReactIconLinkProps): JSX.Element {
   let iconStyle = {
     size: "2em",
-    className: "bg-light text-primary opacity-25 hover:opacity-100 ease duration-300 "
+    className: "w-full h-auto text-dark opacity-25 hover:opacity-100 hover:text-primary transition-all cursor-pointer"
   };
 
   return (

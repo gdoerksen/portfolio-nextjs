@@ -26,7 +26,7 @@ export default function Navbar() {
 
       <Logo />
 
-      <nav className="flex space-x-4">
+      <nav className="flex space-x-4 items-center justify-center">
         <ReactIconLink href="https://www.linkedin.com/in/grahamdoerksen/" icon={FaLinkedin} />
         <ReactIconLink href="https://github.com/gdoerksen" icon={FaGithub} />
         <ReactIconLink href="https://www.meetup.com/pydata-calgary/" icon={FaMeetup} />
