@@ -22,7 +22,7 @@ const Home: NextPage = () => {
           <div className="block md:flex max-w-prose items-center justify-center ">
             {/* TODO: Consider use of max-w-prose on this container */}
             <div className='md:w-1/2' >
-              <Image src={profilePic} alt="Picture of the author" className='object-contain h-[30rem] ' />
+              <Image src={profilePic} alt="Picture of the author" className='object-contain h-[30rem]' />
             </div>
             
             <div className='p-4 md:w-1/2'>

@@ -3,10 +3,12 @@ import Logo from "../Logo";
 
 import { useState } from "react";
 
-import { FaLinkedin, FaGithub, FaMeetup, FaBars, FaSun, FaMoon } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaMeetup, FaBars } from 'react-icons/fa'
 
 import { NavLink } from "./NavLink";
 import { ReactIconLink } from "./ReactIconLink";
+import { ThemeIcon } from "./ThemeIcon";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,18 +75,4 @@ export default function Navbar() {
   );
 }
 
-import useDarkMode from "@/hooks/useDarkMode";
 
-const ThemeIcon = () => {
-  const [darkTheme, setDarkTheme] = useDarkMode();
-  const handleMode = () => setDarkTheme(!darkTheme);
-  return (
-    <span onClick={handleMode}>
-      {darkTheme ? (
-        <FaSun size='30' className='' />
-      ) : (
-        <FaMoon size='30' className='' />
-      )}
-    </span>
-  );
-};
