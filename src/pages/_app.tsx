@@ -21,7 +21,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
 
-     <main className={`${montserrat.variable} font-mont bg-light text-dark w-full min-h-screen`}>
+     <main className={`${montserrat.variable} font-mont w-full min-h-screen
+     bg-light text-dark
+      dark:bg-dark dark:text-light `}>
       <Navbar />
       <Component {...pageProps} />
       </main>
