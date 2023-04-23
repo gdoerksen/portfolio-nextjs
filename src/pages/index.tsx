@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <main className='flex items-center text-dark w-full'>
+      <main className='flex items-center w-full'>
         <Layout className='pt-0'>
           <div className="block sm:flex items-center justify-between w-full">
             <div className='w-1/2'>

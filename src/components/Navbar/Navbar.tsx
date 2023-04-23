@@ -12,7 +12,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-100">
+    <nav className="bg-light">
       <div className="px-8 mx-auto">
         {/* instead of px-8, we can use max-w-7xl and then set a width */}
         <div className="flex justify-between py-4">
@@ -21,7 +21,9 @@ export default function Navbar() {
           <div className="flex space-x-4 items-center">
 
             {/* Logo */}
-            <div> <FaRocket /> </div>
+            <div>
+              <Logo href="/" size="2em" className="w-full h-auto text-dark hover:text-primary transition-all" />
+            </div>
             
             {/* Primary Nav */}
             <div className="hidden md:flex items-center space-x-8 font-medium text-2xl">
@@ -51,7 +53,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div  
-       className={isOpen ? 'hidden md:hidden' : 'md:hidden' } >
+       className={isOpen ? 'md:hidden' : 'hidden md:hidden' } >
         <Link href="/" className="block py-2 px-4 text-md justify-end">Home</Link>
         <Link href="/about" className="block py-2 px-4 text-md ">About</Link>
         <Link href="/projects" className="block py-2 px-4 text-md ">Projects</Link>
