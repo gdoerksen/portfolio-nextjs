@@ -1,3 +1,4 @@
+import AnimatedText from '@/components/AnimatedText';
 import Layout from '@/components/Layout';
 import type { GetStaticProps, NextPage } from 'next';
 import { Inter } from 'next/font/google'
@@ -19,7 +20,8 @@ const Home: NextPage = () => {
 
   return (
     <Layout className='pt-0'>
-          <div className="block md:flex max-w-prose items-center justify-center ">
+        <div className='flex justify-center'>
+          <div className="block md:flex max-w-screen-lg items-center ">
             {/* TODO: Consider use of max-w-prose on this container */}
             <div className='md:w-1/2' >
               <Image src={profilePic} alt="Picture of the author" className='object-contain h-[30rem]' />
@@ -27,6 +29,7 @@ const Home: NextPage = () => {
             
             <div className='p-4 md:w-1/2'>
               <h1 className='sm:text-4xl text-2xl font-bold'>Hi, I&apos;m <span className='text-primary'>Graham </span></h1>
+              {/* <AnimatedText text="This is a test" className='h-10 bg-primary text-dark'/> */}
               <br />
               
               <h2 className='sm:text-2xl text-lg font-bold'>I&apos;m a <span className='text-primary'>Software Developer</span></h2>
@@ -44,6 +47,7 @@ const Home: NextPage = () => {
             </div>
 
           </div>
+        </div>
           </Layout>
   );
 };
