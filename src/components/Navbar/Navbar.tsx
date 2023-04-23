@@ -1,37 +1,63 @@
 import Link from "next/link";
 import Logo from "../Logo";
 
-import { LinkProps } from "next/link";
+import { useState } from "react";
 
-import { IconContext } from "react-icons";
-import { FaLinkedin, FaGithub, FaMeetup } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaMeetup, FaRocket, FaBars } from 'react-icons/fa'
 
 import { NavLink } from "./NavLink";
 import { ReactIconLink } from "./ReactIconLink";
 
 export default function Navbar() {
-
-
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
+    <nav className="bg-gray-100">
+      <div className="px-8 mx-auto">
+        {/* instead of px-8, we can use max-w-7xl and then set a width */}
+        <div className="flex justify-between py-4">
 
-    <header
-      className="w-screen px-16 py-8 font-medium flex items-center justify-between"
-    >
-      <nav>
-        <NavLink href="/" title="Home" className="ml-4" />
-        <NavLink href="/about" title="About" className="mx-4" />
-        <NavLink href="/projects" title="Projects" className="mr-4" />
-      </nav>
+          {/* Logo and Primary */}
+          <div className="flex space-x-4 items-center">
 
-      <Logo />
+            {/* Logo */}
+            <div> <FaRocket /> </div>
+            
+            {/* Primary Nav */}
+            <div className="hidden md:flex items-center space-x-8 font-medium text-2xl">
+              <NavLink href="/" title="Home" />
+              <NavLink href="/about" title="About" />
+              <NavLink href="/projects" title="Projects" />
+            </div>
+          </div>
 
-      <nav className="flex space-x-4 items-center justify-center">
-        <ReactIconLink href="https://www.linkedin.com/in/grahamdoerksen/" icon={FaLinkedin} />
-        <ReactIconLink href="https://github.com/gdoerksen" icon={FaGithub} />
-        <ReactIconLink href="https://www.meetup.com/pydata-calgary/" icon={FaMeetup} />
-      </nav>
+          {/* Secondary Nav */}
+          <div className="hidden md:flex items-center space-x-12">
+            <ReactIconLink href="https://www.linkedin.com/in/grahamdoerksen/" icon={FaLinkedin} />
+            <ReactIconLink href="https://github.com/gdoerksen" icon={FaGithub} />
+            <ReactIconLink href="https://www.meetup.com/pydata-calgary/" icon={FaMeetup} />
+          </div>
 
-    </header>
+          {/* Mobile Button */}
+          <div className="md:hidden flex items-center">
+            <button onClick={() => setIsOpen(!isOpen)}
+            className="outline-none">
+              <FaBars />
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div  
+       className={isOpen ? 'hidden md:hidden' : 'md:hidden' } >
+        <Link href="/" className="block py-2 px-4 text-md justify-end">Home</Link>
+        <Link href="/about" className="block py-2 px-4 text-md ">About</Link>
+        <Link href="/projects" className="block py-2 px-4 text-md ">Projects</Link>
+      </div>
+
+    </nav>
+
   );
 }

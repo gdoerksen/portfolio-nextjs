@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 const Home: NextPage = () => {
 
-  let button_styling = "bg-dark text-light py-3 px-6 rounded-lg text-lg font-semibold hover:bg-primary transition-all" // Refactor This
+  let button_styling = "bg-dark text-light py-3 px-6 rounded-lg text-lg font-semibold transition-all hover:bg-primary outline-none ring-primary focus-visible:ring-2 focus-visible:bg-light focus-visible:text-dark focus-visible:animate-bounce" // Refactor This
 
   return (
     <>
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
                   className={button_styling}>
                   Resume <FaFileDownload className='inline-flex' />
                 </Link>
-                <Link href='/contact' target={"_blank"} className={"ml-4 text-lg font-semibold underline"}>
+                <Link href='/contact' target={"_blank"} className={"ml-4 text-lg font-semibold underline focus-visible:animate-bounce"}>
                   Contact <FaComments className='inline-flex' />
                 </Link>
               </div>
