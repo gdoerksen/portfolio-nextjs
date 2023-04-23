@@ -17,12 +17,12 @@ const Home: NextPage = () => {
     <>
       <main className='flex items-center w-full'>
         <Layout className='pt-0'>
-          <div className="block sm:flex items-center justify-between w-full">
-            <div className='w-1/2'>
-              <Image src={profilePic} alt="Picture of the author" className='object-contain h-96 shadow-dark' />
+          <div className="block md:flex items-center justify-center w-full">
+            <div className='md:w-1/2' >
+              <Image src={profilePic} alt="Picture of the author" className='object-contain h-[30rem] shadow-dark' />
             </div>
             
-            <div className='w-1/2 p-4'>  
+            <div className='p-4 md:w-1/2'>
               <h1 className='sm:text-4xl text-2xl font-bold'>Hi, I'm <span className='text-primary'>Graham </span></h1>
               <br />
               
@@ -39,6 +39,7 @@ const Home: NextPage = () => {
                 </Link>
               </div>
             </div>
+
           </div>
         </Layout>
       </main>

@@ -26,7 +26,7 @@ export default function Navbar() {
             </div>
             
             {/* Primary Nav */}
-            <div className="hidden md:flex items-center space-x-8 font-medium text-2xl">
+            <div className="hidden sm:flex items-center space-x-8 font-medium text-2xl">
               <NavLink href="/" title="Home" />
               <NavLink href="/about" title="About" />
               <NavLink href="/projects" title="Projects" />
@@ -34,14 +34,14 @@ export default function Navbar() {
           </div>
 
           {/* Secondary Nav */}
-          <div className="hidden md:flex items-center space-x-12">
+          <div className="hidden sm:flex items-center space-x-12">
             <ReactIconLink href="https://www.linkedin.com/in/grahamdoerksen/" icon={FaLinkedin} />
             <ReactIconLink href="https://github.com/gdoerksen" icon={FaGithub} />
             <ReactIconLink href="https://www.meetup.com/pydata-calgary/" icon={FaMeetup} />
           </div>
 
           {/* Mobile Button */}
-          <div className="md:hidden flex items-center">
+          <div className="sm:hidden flex items-center">
             <button onClick={() => setIsOpen(!isOpen)}
             className="outline-none">
               <FaBars />
@@ -53,7 +53,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div  
-       className={isOpen ? 'md:hidden' : 'hidden md:hidden' } >
+       className={isOpen ? 'sm:hidden' : 'hidden sm:hidden' } >
         <Link href="/" className="block py-2 px-4 text-md justify-end">Home</Link>
         <Link href="/about" className="block py-2 px-4 text-md ">About</Link>
         <Link href="/projects" className="block py-2 px-4 text-md ">Projects</Link>
