@@ -8,6 +8,7 @@ import Navbar from '@/components/Navbar/Navbar'
 
 
 import {Montserrat} from 'next/font/google'
+import Footer from '@/components/Footer';
 
 
 const montserrat = Montserrat({
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
       dark:bg-dark dark:text-light `}>
       <Navbar />
       <Component {...pageProps} />
+      <Footer />
       </main>
       </ThemeProvider>
     </>
