@@ -4,13 +4,21 @@ import type { GetStaticProps, NextPage } from 'next';
 import { Inter } from 'next/font/google'
 import Image from 'next/image';
 import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
 import { FaComments, FaFileDownload } from 'react-icons/fa';
+
+
 
 import profilePic from '../../public/images/profile/profile.jpg';
 
 const inter = Inter({ subsets: ['latin'] })
 
 const Home: NextPage = () => {
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: '-100px 0px',
+  });
 
   let button_styling = `bg-dark text-light dark:bg-light dark:text-dark 
     py-3 px-6 rounded-lg text-lg font-semibold 
@@ -27,7 +35,7 @@ const Home: NextPage = () => {
               <Image src={profilePic} alt="Picture of the author" className='object-contain h-[30rem]' />
             </div>
             
-            <div className='p-4 md:w-1/2'>
+            <div ref={ref} className={`p-4 md:w-1/2 duration-1000 ${inView ? 'opacity-1' : 'opacity-0 translate-x-16'}`}>
               <h1 className='sm:text-4xl text-2xl font-bold'>Hi, I&apos;m <span className='text-primary'>Graham </span></h1>
               {/* <AnimatedText text="This is a test" className='h-10 bg-primary text-dark'/> */}
               <br />
