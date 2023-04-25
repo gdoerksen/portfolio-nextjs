@@ -4,19 +4,14 @@ import Head from 'next/head';
 
 import { ThemeProvider } from 'next-themes';
 
-import Navbar from '@/components/Navbar/Navbar'
+import Layout from '@/components/Layout';
 
 
-import {Montserrat} from 'next/font/google'
-import Footer from '@/components/Footer';
-
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-mont'
-})
 
 export default function App({ Component, pageProps }: AppProps) {
+
+  //TODO: add a container to the main tag with max-w-screen-2xl
+
   return (
     <>
       <Head>
@@ -24,14 +19,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
 
+
       <ThemeProvider disableTransitionOnChange attribute='class'>
-     <main className={`${montserrat.variable} font-mont w-full min-h-screen
-     bg-light text-dark
-      dark:bg-dark dark:text-light `}>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
-      </main>
+        <Layout>
+            <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </>
   )

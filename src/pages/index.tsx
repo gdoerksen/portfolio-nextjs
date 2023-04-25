@@ -14,23 +14,27 @@ const inter = Inter({ subsets: ['latin'] })
 const Home: NextPage = () => {
 
   return (
-    <Layout className='pt-0'>
       <div className='flex justify-center'>
-        <div className="block md:flex max-w-screen-lg items-center ">
+        <div className="block md:flex max-w-screen-lg items-center py-4">
           {/* TODO: Consider use of max-w-prose on this container */}
-          <div className='md:w-1/2' >
-            <Image src={profilePic} alt="Picture of the author" className='object-contain h-[30rem]' />
-          </div>
-
+          <IntroImage />
           <IntroText />
-
         </div>
+
+        
       </div>
-    </Layout>
   );
 };
 
 export default Home;
+
+let IntroImage = () => {
+  return (
+    <div className='md:w-1/2' >
+      <Image src={profilePic} alt="Picture of the author" className='object-contain h-[30rem]' />
+    </div>
+  )
+}
 
 let IntroText = () => {
 
@@ -46,7 +50,8 @@ let IntroText = () => {
   focus-visible:ring-2 focus-visible:bg-light focus-visible:text-dark focus-visible:animate-bounce` // Refactor This
 
   return (
-    <div ref={ref} className={`p-4 md:w-1/2 duration-1000 ${inView ? 'opacity-1' : 'opacity-0 translate-x-12'}`}>
+    <div className={`p-4 md:w-1/2 overflow-hidden`}>
+      <div ref={ref} className={`duration-1000 ${inView ? 'opacity-1' : 'opacity-0 translate-x-8'} transition-all`}>
       <h1 className='sm:text-4xl text-2xl font-bold'>Hi, I&apos;m <span className='text-primary dark:text-dark_primary'>Graham </span></h1>
       {/* <AnimatedText text="This is a test" className='h-10 bg-primary text-dark'/> */}
       <br />
@@ -60,9 +65,10 @@ let IntroText = () => {
           Resume <FaFileDownload className='inline-flex' />
         </Link>
         <Link href='/contact' target={"_blank"} 
-          className={"ml-4 text-lg font-semibold underline py-3 px-6 transition-all rounded-lg ring-dark hover:ring-primary ring-2  focus-visible:animate-bounce"}>
+          className={"ml-4 text-lg font-semibold underline py-3 px-6 transition-all rounded-lg ring-dark dark:ring-light hover:ring-primary hover:dark:ring-dark_primary ring-2 hover:ring-4 focus-visible:animate-bounce"}>
           Contact <FaComments className='inline-flex' />
         </Link>
+      </div>
       </div>
     </div>
   )
