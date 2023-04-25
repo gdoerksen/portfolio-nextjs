@@ -11,7 +11,7 @@ type ReactIconLinkProps = {
 export function ReactIconLink(obj: ReactIconLinkProps): JSX.Element {
   let iconStyle = {
     size: "3em",
-    className: "w-full h-auto opacity-25 hover:opacity-100 hover:text-primary transition-all"
+    className: "w-full h-auto opacity-25 hover:opacity-100 hover:text-primary dark:text-dark_primary transition-all"
   };
 
   return (

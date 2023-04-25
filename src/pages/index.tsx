@@ -36,15 +36,15 @@ const Home: NextPage = () => {
             </div>
             
             <div ref={ref} className={`p-4 md:w-1/2 duration-1000 ${inView ? 'opacity-1' : 'opacity-0 translate-x-16'}`}>
-              <h1 className='sm:text-4xl text-2xl font-bold'>Hi, I&apos;m <span className='text-primary'>Graham </span></h1>
+              <h1 className='sm:text-4xl text-2xl font-bold'>Hi, I&apos;m <span className='text-primary dark:text-dark_primary'>Graham </span></h1>
               {/* <AnimatedText text="This is a test" className='h-10 bg-primary text-dark'/> */}
               <br />
               
-              <h2 className='sm:text-2xl text-lg font-bold'>I&apos;m a <span className='text-primary'>Software Developer</span></h2>
+              <h2 className='sm:text-2xl text-lg font-bold'>I&apos;m a <span className='text-primary dark:text-dark_primary'>Software Developer</span></h2>
               <br />
               
               <div className='flex items-center self-start mt-2'>
-                <Link href='/sample.pdf' target={"_blank"} download="Graham-Doerksen-Resume"
+                <Link href='/docs/resumes/Resume_Base.pdf' locale={false} target={"_blank"} download="Graham-Doerksen-Resume"
                   className={button_styling}>
                   Resume <FaFileDownload className='inline-flex' />
                 </Link>

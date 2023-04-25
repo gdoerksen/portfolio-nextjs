@@ -24,7 +24,7 @@ export default function Navbar() {
 
             {/* Logo */}
             <div>
-              <Logo href="/" size="2em" className="w-full h-auto hover:text-primary transition-all" />
+              <Logo href="/" size="2em" className="w-full h-auto hover:text-primary dark:text-dark_primary transition-all" />
             </div>
             
             {/* Primary Nav */}
