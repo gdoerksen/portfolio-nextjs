@@ -15,8 +15,9 @@ const Home: NextPage = () => {
 
   return (
       <div className='flex justify-center'>
-        <div className="block md:flex max-w-screen-lg items-center py-4">
+        <div className="block md:flex min-h-screen max-w-screen-lg items-center py-4">
           {/* TODO: Consider use of max-w-prose on this container */}
+          {/* Use of min-h-screen helps keep the viewer focused, we should add a drop arrow*/}
           <IntroImage />
           <IntroText />
         </div>
