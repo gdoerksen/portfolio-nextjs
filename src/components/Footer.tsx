@@ -13,7 +13,7 @@ const year = new Date().getFullYear();
         <span className=""> &copy; {year} Graham Doerksen</span>
       </div>
       <div>
-        <span> Built with Next.JS and Typescript </span>
+        <span> Built with Next.JS, Typescript, Tailwind </span>
       </div>
     </footer>
   );
