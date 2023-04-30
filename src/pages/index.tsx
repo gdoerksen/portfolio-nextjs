@@ -1,6 +1,4 @@
-import AnimatedText from '@/components/AnimatedText';
-import Layout from '@/components/Layout';
-import type { GetStaticProps, NextPage } from 'next';
+import type { NextPage } from 'next';
 import { Inter } from 'next/font/google'
 import Image from 'next/image';
 import Link from 'next/link';

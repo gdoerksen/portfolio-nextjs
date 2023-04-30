@@ -6,9 +6,9 @@ import ExperienceBlock from "@/components/ExperienceBlock";
 import SkillsBlock from "@/components/SkillsBlock";
 
 import { SiAzuredevops, SiCplusplus, SiDocker, SiGit, SiNextdotjs, SiPython, SiReact, SiRust } from 'react-icons/si'
-import {TbSql} from 'react-icons/tb'
+import { TbSql } from 'react-icons/tb'
 
-function AboutPage() {
+export default function AboutPage() {
 
   return (
     <>
@@ -16,15 +16,25 @@ function AboutPage() {
         title="Graham Doerksen | About"
         description="Graham Doerksen Portfolio"
       />
-
-      {/* Software Experience */}
-      <div>
         <div className="flex flex-col items-center justify-center py-2">
           <h1 className="text-6xl font-bold">About Me</h1>
           <p className="mt-3 text-2xl">
             I am a full stack developer with a passion for building production grade apps.
           </p>
         </div>
+
+      <ExperienceSection />
+      <SkillsSection />
+      <EducationSection />
+    </>
+  );
+
+}
+
+function ExperienceSection() {
+  return (
+    <>
+      <div className="">
 
         <ExperienceBlock
           title="Software Developer"
@@ -58,7 +68,13 @@ function AboutPage() {
             "Python, SQL, C, C++, C#, DevOps, Github"
           ]} />
       </div>
+    </>
+  )
+}
 
+function SkillsSection() {
+  return (
+    <>
       {/* Skills */}
       <div className="flex flex-col items-center justify-center py-2">
         <h1 className="text-6xl font-bold">Skills</h1>
@@ -69,51 +85,51 @@ function AboutPage() {
           {/* Perhaps split skills into languages vs tooling vs Frameworks? */}
 
           <SkillsBlock title="Python" icon={SiPython} colorCss="hover:text-yellow-600 dark:hover:text-yellow-600 hover:ring-yellow-600 dark:hover:ring-yellow-600" />
-          <SkillsBlock title="C/C++" icon={SiCplusplus} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400"/>
-          <SkillsBlock title="Rust" icon={SiRust} colorCss="hover:text-orange-700 dark:hover:text-orange-600 hover:ring-orange-700 dark:hover:ring-orange-600" 
-           />
-          <SkillsBlock title="SQL" icon={TbSql} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400"/>
-          <SkillsBlock title="Docker" icon={SiDocker} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400"/>
-          <SkillsBlock title="Git" icon={SiGit} colorCss="hover:text-orange-700 dark:hover:text-orange-600 hover:ring-orange-700 dark:hover:ring-orange-600"/>
-          <SkillsBlock title="DevOps" icon={SiAzuredevops} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400"/>
-          <SkillsBlock title="React" icon={SiReact} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400"/>
-          <SkillsBlock title="Next.js" icon={SiNextdotjs} colorCss="hover:text-purple-600 dark:hover:text-purple-400 hover:ring-purple-600 dark:hover:ring-purple-400"/>
-
-
+          <SkillsBlock title="C/C++" icon={SiCplusplus} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400" />
+          <SkillsBlock title="Rust" icon={SiRust} colorCss="hover:text-orange-700 dark:hover:text-orange-600 hover:ring-orange-700 dark:hover:ring-orange-600"
+          />
+          <SkillsBlock title="SQL" icon={TbSql} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400" />
+          <SkillsBlock title="Docker" icon={SiDocker} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400" />
+          <SkillsBlock title="Git" icon={SiGit} colorCss="hover:text-orange-700 dark:hover:text-orange-600 hover:ring-orange-700 dark:hover:ring-orange-600" />
+          <SkillsBlock title="DevOps" icon={SiAzuredevops} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400" />
+          <SkillsBlock title="React" icon={SiReact} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400" />
+          <SkillsBlock title="Next.js" icon={SiNextdotjs} colorCss="hover:text-purple-600 dark:hover:text-purple-400 hover:ring-purple-600 dark:hover:ring-purple-400" />
         </div>
       </div>
-
-      {/* Education */}
-      <div>
-        <div className="flex flex-col items-center justify-center py-2">
-          <h1 className="text-6xl font-bold">Education</h1>
-        </div>
-      </div>
-
-
-
     </>
-  );
-
-  // <div className="grid w-full grid-cols-8 gap-16">
-  // <div className="col-span-3 flex flex-col items-start justify-start">
-  //   <h2 className="mb-4 text-4xl font-bold uppercase">Skills</h2>
-  //   <p>
-  //     I have experience with the following technologies:
-  //     <ul className="list-disc list-inside">
-  //       <li>React</li>
-  //       <li>Next.js</li>
-  //       <li>Node.js</li>
-  //       <li>Express</li>
-  //       <li>PostgreSQL</li>
-  //       <li>GraphQL</li>
-  //       <li>Prisma</li>
-  //       <li>Typescript</li>
-  //       </ul>
-  //   </p>
-  // </div>
-  // </div>
-
+  )
 }
 
-export default AboutPage;
+function EducationSection() {
+  return (
+    <>
+      {/* Education */}
+      <div className="flex flex-col items-center justify-center py-2">
+        <h1 className="text-6xl font-bold">Education</h1>
+      </div>
+      <div>
+        <ExperienceBlock 
+        title="Masters of Science in Mechanical Engineering"
+         company="University of Calgary"
+          date="2017 - 2021" description={[
+            "GPA 3.9/4.0",
+            "Founding member of the UCalgary rocket lab; Built, designed and flew three rocket vehicles",
+            "Completed computational fluid dynamics simulations of incompressible confined jets",
+            "Used python pandas, numpy, scipy, and matplotlib to automatically process 3D simulation data into useable research results."
+            // Thesis link
+          ]} />
+
+        <ExperienceBlock
+          title="Bachelors of Science in Mechanical Engineering"
+          company="University of Calgary"
+          date="2012 - 2017"
+          description={[
+            "GPA 3.7/4.0",
+            "First Place Capstone Project",
+            "Schulich Community Prestige Scholarship",
+            "Completed a 16 month internship at a major oil and gas company",
+          ]} />
+      </div>
+    </>
+  )
+}
