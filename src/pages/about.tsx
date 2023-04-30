@@ -68,15 +68,17 @@ function AboutPage() {
           {/* TODO add careertag prop to SkillsBlock */}
           {/* Perhaps split skills into languages vs tooling vs Frameworks? */}
 
-          <SkillsBlock title="Python" icon={SiPython} />
-          <SkillsBlock title="C/C++" icon={SiCplusplus} />
-          <SkillsBlock title="Rust" icon={SiRust} />
-          <SkillsBlock title="SQL" icon={TbSql} />
-          <SkillsBlock title="Docker" icon={SiDocker} />
-          <SkillsBlock title="Git" icon={SiGit} />
-          <SkillsBlock title="DevOps" icon={SiAzuredevops} />
-          <SkillsBlock title="React" icon={SiReact} />
-          <SkillsBlock title="Next.js" icon={SiNextdotjs} />
+          <SkillsBlock title="Python" icon={SiPython} colorCss="hover:text-yellow-600 dark:hover:text-yellow-600 hover:ring-yellow-600 dark:hover:ring-yellow-600" />
+          <SkillsBlock title="C/C++" icon={SiCplusplus} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400"/>
+          <SkillsBlock title="Rust" icon={SiRust} colorCss="hover:text-orange-700 dark:hover:text-orange-600 hover:ring-orange-700 dark:hover:ring-orange-600" 
+           />
+          <SkillsBlock title="SQL" icon={TbSql} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400"/>
+          <SkillsBlock title="Docker" icon={SiDocker} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400"/>
+          <SkillsBlock title="Git" icon={SiGit} colorCss="hover:text-orange-700 dark:hover:text-orange-600 hover:ring-orange-700 dark:hover:ring-orange-600"/>
+          <SkillsBlock title="DevOps" icon={SiAzuredevops} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400"/>
+          <SkillsBlock title="React" icon={SiReact} colorCss="hover:text-blue-600 dark:hover:text-blue-400 hover:ring-blue-600 dark:hover:ring-blue-400"/>
+          <SkillsBlock title="Next.js" icon={SiNextdotjs} colorCss="hover:text-purple-600 dark:hover:text-purple-400 hover:ring-purple-600 dark:hover:ring-purple-400"/>
+
 
         </div>
       </div>
