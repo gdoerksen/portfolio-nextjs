@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
 interface ExperienceBlockProps {
   title: string;
@@ -16,6 +17,11 @@ function ExperienceBlock({
   date,
   description,
 }: ExperienceBlockProps) {
+
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    rootMargin: '-100px 0px',
+  });
 
   let companyComponent = null;
   if (company) {
@@ -36,8 +42,9 @@ function ExperienceBlock({
 
 
   return (
+    <div ref={ref} className={`duration-1000 ${inView ? 'opacity-1' : 'opacity-0 translate-x-8'} transition-all`}>
     <div className="flex flex-col items-start justify-start rounded-md ring-2 ring-dark dark:ring-light p-4 m-4">
-      <h2 className="mb-4 text-4xl font-bold">{title}</h2>
+      <h2 className="mb-4 text-4xl font-bold text-primary dark:text-dark_primary">{title}</h2>
       {companyComponent}
       <p className="mb-2 text-xl">{date}</p>
 
@@ -51,6 +58,7 @@ function ExperienceBlock({
         </ul>
       )}
 
+    </div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "next/head";
+import Link from "next/link";
 
 import SEOHead from "@/components/SEO/SEOHead";
 import ExperienceBlock from "@/components/ExperienceBlock";
@@ -11,12 +11,13 @@ import { TbSql } from 'react-icons/tb'
 export default function AboutPage() {
 
   return (
-    <>
+    <div className="flex justify-center">
+    <div className="max-w-screen-lg">
       <SEOHead
         title="Graham Doerksen | About"
         description="Graham Doerksen Portfolio"
       />
-        <div className="flex flex-col items-center justify-center py-2">
+        <div className="flex flex-col items-center justify-center p-4 m-4">
           <h1 className="text-6xl font-bold">About Me</h1>
           <p className="mt-3 text-2xl">
             I am a full stack developer with a passion for building production grade apps.
@@ -26,7 +27,8 @@ export default function AboutPage() {
       <ExperienceSection />
       <SkillsSection />
       <EducationSection />
-    </>
+    </div>
+    </div>
   );
 
 }
@@ -34,7 +36,7 @@ export default function AboutPage() {
 function ExperienceSection() {
   return (
     <>
-      <div className="">
+      <div id="Experience" className="">
 
         <ExperienceBlock
           title="Software Developer"
@@ -76,7 +78,7 @@ function SkillsSection() {
   return (
     <>
       {/* Skills */}
-      <div className="flex flex-col items-center justify-center py-2">
+      <div id="Skills" className="flex flex-col items-center justify-center py-2">
         <h1 className="text-6xl font-bold">Skills</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
 
@@ -104,7 +106,7 @@ function EducationSection() {
   return (
     <>
       {/* Education */}
-      <div className="flex flex-col items-center justify-center py-2">
+      <div id="Education" className="flex flex-col items-center justify-center py-2">
         <h1 className="text-6xl font-bold">Education</h1>
       </div>
       <div>
