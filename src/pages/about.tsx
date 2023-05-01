@@ -12,11 +12,11 @@ export default function AboutPage() {
 
   return (
     <div className="flex justify-center">
-    <div className="max-w-screen-lg">
-      <SEOHead
-        title="Graham Doerksen | About"
-        description="Graham Doerksen Portfolio"
-      />
+      <div className="max-w-screen-lg">
+        <SEOHead
+          title="Graham Doerksen | About"
+          description="Graham Doerksen Portfolio"
+        />
         <div className="flex flex-col items-center justify-center p-4 m-4">
           <h1 className="text-6xl font-bold">About Me</h1>
           <p className="mt-3 text-2xl">
@@ -24,10 +24,11 @@ export default function AboutPage() {
           </p>
         </div>
 
-      <ExperienceSection />
-      <SkillsSection />
-      <EducationSection />
-    </div>
+        <ExperienceSection />
+        <SkillsSection />
+        <EducationSection />
+        <CommunitySection />
+      </div>
     </div>
   );
 
@@ -110,9 +111,9 @@ function EducationSection() {
         <h1 className="text-6xl font-bold">Education</h1>
       </div>
       <div>
-        <ExperienceBlock 
-        title="Masters of Science in Mechanical Engineering"
-         company="University of Calgary"
+        <ExperienceBlock
+          title="Masters of Science in Mechanical Engineering"
+          company="University of Calgary"
           date="2017 - 2021" description={[
             "GPA 3.9/4.0",
             "Founding member of the UCalgary rocket lab; Built, designed and flew three rocket vehicles",
@@ -130,6 +131,46 @@ function EducationSection() {
             "First Place Capstone Project",
             "Schulich Community Prestige Scholarship",
             "Completed a 16 month internship at a major oil and gas company",
+          ]} />
+      </div>
+    </>
+  )
+}
+
+function CommunitySection() {
+  return (
+    <>
+      <div id="Community" className="flex flex-col items-center justify-center py-2">
+        <h1 className="text-6xl font-bold">Community</h1>
+      </div>
+      <div>
+        <ExperienceBlock
+          title="PyData Calgary Organizer"
+          date="2022 - Present"
+          description={[
+            "Organized monthly meetups for the PyData Calgary community",
+            "Coordinated talks and workshops on topics such as machine learning, software development, data visualization and more!",
+            "Collaborated with local businesses and universities to secure sponsorships and host events at various venues",
+            "Join us on https://www.meetup.com/pydata-calgary/"
+          ]} />
+
+        <ExperienceBlock
+          title="Puzzle Master"
+          company="Key Clue, University of Calgary"
+          date="2021 - 2022"
+          description={[
+            "Designed and facilitated a story-driven week-long puzzle game for engineering students to find a physical key hidden within Calgary",
+            "Puzzles involve cryptography, mapping, software development and data science analysis",
+            "Analagous to a cybersecurity CTF event with geocaching elements"
+          ]} />
+
+        <ExperienceBlock
+          title="Mentor"
+          company="SOAR, University of Calgary"
+          date="2017 - 2018"
+          description={[
+            "Mentored 3rd and 4th year engineering students in the design and construction of a rocket vehicle",
+            "Provided guidance on technical and project management issues",
           ]} />
       </div>
     </>
